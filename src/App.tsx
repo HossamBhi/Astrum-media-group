@@ -2,7 +2,7 @@ function App() {
   return (
     <div className="h-screen w-full justify-between py-[4vh] xl:py-[8vh] flex flex-col">
       <div className="flex items-center">
-        <p className="fixed left-[8%] text-[1vh] xl:text-[1.5vh]">01.01.2024</p>
+        {/* <p className="fixed left-[8%] text-[1vh] xl:text-[1.5vh]">01.01.2024</p> */}
         <a
           className="flex-1 flex justify-center items-center"
           href="https://vitejs.dev"
