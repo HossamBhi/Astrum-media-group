@@ -7,10 +7,23 @@
   src: url("/fonts/SpaceGrotesk-Regular.woff2");
 }
 
+@font-face {
+  font-family: "RedHatDisplay-Regular";
+  src: url("/fonts/RedHatDisplay-Regular.woff2");
+}
+
+@font-face {
+  font-family: "RedHatDisplay-Black";
+  src: url("/fonts/RedHatDisplay-Black.woff2");
+}
+
 :root {
-  --foreground-rgb: 255, 255, 255;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+  /* --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0; */
 }
 
 html,
@@ -21,11 +34,24 @@ body,
 
 body {
   color: rgb(var(--foreground-rgb));
-  font-family: "SpaceGrotesk-Regular";
+  font-family: "RedHatDisplay-Regular";
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }
