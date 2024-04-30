@@ -13,7 +13,9 @@ export default {
         "SpaceGrotesk-Bold": "SpaceGrotesk-Bold",
         "SpaceGrotesk-SemiBold": "SpaceGrotesk-SemiBold",
         "RedHatDisplay-Black": "RedHatDisplay-Black",
-        "RedHatDisplay-Regular": "RedHatDisplay-Regular"
+        "RedHatDisplay-Regular": "RedHatDisplay-Regular",
+        "RedHatDisplay-Medium": "RedHatDisplay-Medium",
+        "RedHatDisplay-Bold": "RedHatDisplay-Bold"
       },
     },
   },

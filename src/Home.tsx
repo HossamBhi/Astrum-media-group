@@ -1,8 +1,11 @@
 import {
   AboutSection,
+  ContactSection,
   FeatureProjectsSection,
   HeroSection,
   OurGroupSection,
+  OurPeopleSection,
+  RevealedSection,
 } from "./components";
 import { HomeNav } from "./components/Navbar";
 
@@ -13,6 +16,9 @@ const Home = () => (
     <AboutSection />
     <FeatureProjectsSection />
     <OurGroupSection />
+    <OurPeopleSection />
+    <RevealedSection />
+    <ContactSection />
   </main>
 );
 

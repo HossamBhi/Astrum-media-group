@@ -5,59 +5,59 @@ const OurGroupSection = () => {
   return (
     <>
       <SectionWrapper
-        className="flex flex-row pb-[5vh] gap-[4vw]"
+        className="flex flex-row gap-[4vw] pb-[5vh]"
         id={NavLinks[3].id}
       >
         <div className="flex-1">
-          <h2 className="text-[4.5vw] font-RedHatDisplay-Black">Our Group</h2>
+          <h2 className="font-RedHatDisplay-Black text-[4.5vw]">Our Group</h2>
         </div>
         <div className="flex flex-1 items-end">
-          <p className="text-secondary text-[1.8vw]">
+          <p className="text-[1.8vw] text-secondary">
             entity comprising specialized <br />
             boutiques catering to various <br />
             media landscape facets.
           </p>
         </div>
       </SectionWrapper>
-      <SectionWrapper className="grid grid-cols-2 pb-[15vh] gap-[4vw] gap-y-[5vw]">
+      <SectionWrapper className="grid grid-cols-2 gap-[4vw] gap-y-[5vw] pb-[10vh]">
         {[
           {
             title: "Astrum Films",
             des: "Entity comprising specialized boutiques catering to various media.",
             url: "",
-            logo: "/Star.svg",
+            logo: "/icons/Astrum-films-icon.svg",
           },
           {
             title: "Level A Agency",
             des: "Entity comprising specialized boutiques catering to various media.",
             url: "",
-            logo: "/Star.svg",
+            logo: "/icons/Level-A-icon.svg",
           },
           {
             title: "Makina Studios ",
             des: "Entity comprising specialized boutiques catering to various media.",
             url: "",
-            logo: "/Star.svg",
+            logo: "/icons/Magnum-icon.svg",
           },
           {
             title: "Magnum VFX",
             des: "Entity comprising specialized boutiques catering to various media.",
             url: "",
-            logo: "/Star.svg",
+            logo: "/icons/Makina-icon.svg",
           },
         ].map((item, index) => (
-          <div key={index} className="flex-col flex ">
-            <div className="bg-black h-[24vw] flex justify-center items-center">
-              <Image className="w-[20%]" src={item.logo} alt={item.title} />
+          <div key={index} className="flex flex-col ">
+            <div className="flex h-[24vw] items-center justify-center bg-black">
+              <Image className="w-[14%]" src={item.logo} alt={item.title} />
             </div>
             <div className="ps-[1vw] pt-[1.5vw]">
               <div className="flex w-full items-center justify-between font-RedHatDisplay-Black">
-                <h3 className="text-[2.2vw] pb-[0.5vh]">{item.title}</h3>
-                <a className="underline text-[1.2vw]" href={item.url}>
+                <h3 className="pb-[0.5vh] text-[2.2vw]">{item.title}</h3>
+                <a className="text-[1.2vw] underline" href={item.url}>
                   Open Website
                 </a>
               </div>
-              <p className="text-secondary text-[1.2vw] pe-[30%] font-bold">
+              <p className="pe-[30%] text-[1.2vw] font-bold text-secondary">
                 {item.des}
               </p>
             </div>

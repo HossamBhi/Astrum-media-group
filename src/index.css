@@ -17,6 +17,16 @@
   src: url("/fonts/RedHatDisplay-Black.woff2");
 }
 
+@font-face {
+  font-family: "RedHatDisplay-Medium";
+  src: url("/fonts/RedHatDisplay-Medium.woff2");
+}
+
+@font-face {
+  font-family: "RedHatDisplay-Bold";
+  src: url("/fonts/RedHatDisplay-Bold.woff2");
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;
