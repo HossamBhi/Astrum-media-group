@@ -9,7 +9,7 @@ const AboutSection = () => {
         id={NavLinks[1].id}
       >
         <div className="flex-1">
-          <p className="text-[#AAAAAA] text-[1.8vw] pb-[0.5vh] italic">
+          <p className="text-secondary text-[1.8vw] pb-[0.5vh] italic">
             Who We Are
           </p>
           <h2 className="text-[3.2vw] font-RedHatDisplay-Black">
@@ -23,7 +23,7 @@ const AboutSection = () => {
           </h2>
         </div>
         <div className="flex flex-1 items-end">
-          <p className="text-[#AAAAAA] text-[1.8vw] italic">
+          <p className="text-secondary text-[1.8vw] italic">
             Astrum Media Group is a collaborative platform <br />
             for making a wide range of content for any <br />
             medium through imagination, storytelling, and
@@ -36,7 +36,7 @@ const AboutSection = () => {
           <h3 className="text-[3.2vw] font-RedHatDisplay-Black pb-[0.5vh]">
             Mission
           </h3>
-          <p className="text-[#AAAAAA] text-[1.8vw] italic">
+          <p className="text-secondary text-[1.8vw] italic">
             Empower clients with top-tier media <br />
             solutions by utilizing technology and <br />
             talent to create compelling & engaging <br />
@@ -47,7 +47,7 @@ const AboutSection = () => {
           <h3 className="text-[3.2vw] font-RedHatDisplay-Black pb-[0.5vh]">
             Vision
           </h3>
-          <p className="text-[#AAAAAA] text-[1.8vw] italic">
+          <p className="text-secondary text-[1.8vw] italic">
             Our vision is to be at the forefront <br />
             of the media industry, known for <br />
             our pioneering creativity & <br />

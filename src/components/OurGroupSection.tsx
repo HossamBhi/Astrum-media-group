@@ -12,7 +12,7 @@ const OurGroupSection = () => {
           <h2 className="text-[4.5vw] font-RedHatDisplay-Black">Our Group</h2>
         </div>
         <div className="flex flex-1 items-end">
-          <p className="text-[#AAAAAA] text-[1.8vw]">
+          <p className="text-secondary text-[1.8vw]">
             entity comprising specialized <br />
             boutiques catering to various <br />
             media landscape facets.
@@ -57,7 +57,7 @@ const OurGroupSection = () => {
                   Open Website
                 </a>
               </div>
-              <p className="text-[#AAAAAA] text-[1.2vw] pe-[30%] font-bold">
+              <p className="text-secondary text-[1.2vw] pe-[30%] font-bold">
                 {item.des}
               </p>
             </div>
