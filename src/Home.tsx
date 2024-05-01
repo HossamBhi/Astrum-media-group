@@ -1,7 +1,9 @@
+import { ToastContainer } from "react-toastify";
 import {
   AboutSection,
   ContactSection,
   FeatureProjectsSection,
+  FooterSection,
   HeroSection,
   OurGroupSection,
   OurPeopleSection,
@@ -19,6 +21,8 @@ const Home = () => (
     <OurPeopleSection />
     <RevealedSection />
     <ContactSection />
+    <FooterSection />
+    <ToastContainer />
   </main>
 );
 

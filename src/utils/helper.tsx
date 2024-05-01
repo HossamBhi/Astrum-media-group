@@ -30,3 +30,6 @@ export const NavLinks = [
     path: "#contact",
   },
 ];
+
+export const OUR_EMAIL = "info@astrummg.com"; // Hello@astrumfilms.com
+ 

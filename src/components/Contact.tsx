@@ -1,5 +1,5 @@
+import { OUR_EMAIL } from "../utils/helper";
 import { SectionWrapper } from "./ui";
-
 const ContactSection = () => {
   return (
     <SectionWrapper className="pb-[10vh]">
@@ -8,11 +8,11 @@ const ContactSection = () => {
           Get in Touch
         </h3>
         <a
-          href="mailto:Hello@astrumfilms.com"
-          className="font-RedHatDisplay-Medium text-[1.8vw] text-black"
-          aria-label="Send mail to Hello@astrumfilms.com"
+          href={`mailto:${OUR_EMAIL}`}
+          className="font-RedHatDisplay-Medium text-[2.5vw] text-black"
+          aria-label={`Send mail to ${OUR_EMAIL}`}
         >
-          Hello@astrumfilms.com
+          {OUR_EMAIL}
         </a>
       </div>
     </SectionWrapper>

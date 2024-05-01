@@ -37,12 +37,12 @@ const FeatureProjectsSection = () => {
         id={NavLinks[3].id}
       >
         <div className="flex-1">
-          <h2 className="font-RedHatDisplay-Black text-[4.5vw]">
+          <h2 className="font-RedHatDisplay-Black text-[5vw]">
             Feature Projects
           </h2>
         </div>
         <div className="flex flex-1 items-end">
-          <p className="text-[1.8vw] text-secondary">
+          <p className="text-[1.8vw] text-secondary italic">
             entity comprising specialized <br />
             boutiques catering to various <br />
             media landscape facets.
@@ -115,7 +115,7 @@ const FeatureProjectsSection = () => {
                 <h3 className="min-w-[30vw] font-RedHatDisplay-Black text-[1.1vw]">
                   CATEGORY
                 </h3>
-                <p className="text-[1.2vw] font-medium text-secondary">
+                <p className="text-[1.2vw] font-medium text-secondary italic">
                   {item.category}
                 </p>
               </div>

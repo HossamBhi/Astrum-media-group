@@ -40,7 +40,7 @@ const OurPeopleSection = () => {
           <h2 className="font-RedHatDisplay-Black text-[4.5vw]">Our People</h2>
         </div>
         <div className="flex flex-1 items-end">
-          <p className="text-[1.8vw] text-secondary">
+          <p className="text-[1.8vw] text-secondary italic">
             entity comprising specialized <br />
             boutiques catering to various <br />
             media landscape facets.
