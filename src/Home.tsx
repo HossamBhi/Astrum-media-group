@@ -10,9 +10,10 @@ import {
   RevealedSection,
 } from "./components";
 import { HomeNav } from "./components/Navbar";
+import Example from "./Test";
 
 const Home = () => (
-  <main className="h-screen w-full justify-between ">
+  <main className="min-h-screen w-full">
     <HomeNav />
     <HeroSection />
     <AboutSection />

@@ -9,8 +9,10 @@ const FooterSection = () => {
       </div>
       <div className="flex flex-1 justify-between font-RedHatDisplay-Medium">
         <div>
-          <p className="pb-[3vh] text-start text-[1.8vw] uppercase">Social</p>
-          <ul className="text-[1.5vw]">
+          <p className="pb-[3vh] text-start text-[1.8vw] uppercase xl:text-[1.2vw]">
+            Social
+          </p>
+          <ul className="text-[1.5vw] xl:text-[0.8vw]">
             {[
               { label: "Facebook", path: "" },
               { label: "Instagram", path: "" },
