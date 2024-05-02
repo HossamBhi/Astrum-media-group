@@ -1,7 +1,7 @@
+import { motion } from "framer-motion";
 import { Tilt } from "react-tilt";
 import { NavLinks } from "../utils/helper";
 import { Image, SectionWrapper } from "./ui";
-import { motion } from "framer-motion";
 import { animateText } from "../utils/motionHelper";
 
 const defaultOptions = {
@@ -22,15 +22,17 @@ const OurGroupSection = () => (
       className="flex flex-row gap-[4vw] pb-[5vh]"
       id={NavLinks[3].id}
     >
-      <motion.h2
-        // variants={animateText}
-        initial="hidden"
-        whileHover={"visible"}
-        whileInView={"visible"}
-        className="flex-1 font-RedHatDisplay-Black text-[4.5vw] 3xl:text-[3vw]"
-      >
-        Our Group
-      </motion.h2>
+      <div className="flex-1 overflow-hidden">
+        <motion.h2
+          variants={animateText}
+          initial="hidden"
+          whileHover={"visible"}
+          whileInView={"visible"}
+          className="font-RedHatDisplay-Black text-[4.5vw] 3xl:text-[3vw]"
+        >
+          Our Group
+        </motion.h2>
+      </div>
       <div className="flex flex-1 items-end">
         <p className="text-[1.8vw] italic text-secondary 3xl:text-[1.2vw]">
           entity comprising specialized <br />

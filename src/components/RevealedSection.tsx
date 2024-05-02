@@ -1,8 +1,7 @@
 import { useRef, useState } from "react";
-import { ArrowLeft, ArrowRight } from "../assets/svg";
 import { useWindowDimensions } from "../hooks";
-import { Image } from "./ui";
 import { NextBtn, PrevBtn } from "./carousel";
+import { Image } from "./ui";
 
 const RevealedSection = () => {
   const scrollRef = useRef(null);
@@ -102,7 +101,7 @@ const RevealedSection = () => {
                     <span className="h-[2px] w-[1.2vw] bg-black"></span>
                     &nbsp; Y
                   </div>
-                  <p className="text-[1.1vw] 3xl:text-[0.73vw] font-bold text-black">
+                  <p className="text-[1.1vw] font-bold text-black 3xl:text-[0.73vw]">
                     {item.date}
                   </p>
                 </div>
@@ -110,7 +109,7 @@ const RevealedSection = () => {
                   <h3 className="min-w-[30vw] font-RedHatDisplay-Black text-[1.1vw] 3xl:text-[0.73vw]">
                     CATEGORY
                   </h3>
-                  <p className="text-[1.2vw] 3xl:text-[0.8vw] font-medium text-secondary">
+                  <p className="text-[1.2vw] font-medium text-secondary 3xl:text-[0.8vw]">
                     {item.category}
                   </p>
                 </div>
@@ -118,7 +117,7 @@ const RevealedSection = () => {
             </div>
           ))}
         </section>
-        <div className="absolute left-0 top-0 flex w-full items-center justify-between gap-[5vw] px-[5vw]">
+        <div className="absolute left-0 -top-[2vh] xl:-top-[5vh] flex w-full items-center justify-between gap-[5vw] px-[5vw]">
           <PrevBtn onClick={slideLeft} />
           <NextBtn onClick={slideRight} />
         </div>

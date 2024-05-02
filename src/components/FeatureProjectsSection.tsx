@@ -1,10 +1,9 @@
-import { useRef, useState } from "react";
-import { ArrowLeft, ArrowRight } from "../assets/svg";
-import { NavLinks } from "../utils/helper";
-import { Image, SectionWrapper } from "./ui";
-import { useWindowDimensions } from "../hooks";
-import { NextBtn, PrevBtn } from "./carousel";
 import { motion } from "framer-motion";
+import { useRef, useState } from "react";
+import { useWindowDimensions } from "../hooks";
+import { NavLinks } from "../utils/helper";
+import { NextBtn, PrevBtn } from "./carousel";
+import { Image, SectionWrapper } from "./ui";
 
 const FeatureProjectsSection = () => {
   const scrollRef = useRef(null);
