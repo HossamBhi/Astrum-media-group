@@ -1,59 +1,75 @@
+import { motion } from "framer-motion";
 import { NavLinks } from "../utils/helper";
+import { AnimateTextLine, AnimateTextLines } from "./animation";
 import { SectionWrapper } from "./ui";
+import { fadeIn, slideIn } from "../utils/motionHelper";
 
 const AboutSection = () => {
   return (
     <>
       <SectionWrapper
-        className="flex flex-row py-[6vh] xl:py-[15vh] 3xl:py-[10vh] gap-[4vw]"
+        className="flex flex-row gap-[4vw] py-[6vh] xl:py-[15vh] 3xl:py-[10vh]"
         id={NavLinks[1].id}
       >
         <div className="flex-1">
-          <p className="text-secondary text-[1.8vw] 3xl:text-[1.2vw] pb-[0.5vh] italic">
+          <AnimateTextLine className="pb-[0.5vh] text-[1.8vw] italic text-secondary 3xl:text-[1.2vw]">
             Who We Are
-          </p>
-          <h2 className="text-[3.2vw] 3xl:text-[2.2vw] font-RedHatDisplay-Black">
-            We are an independent <br />
-            group of diverse
-            <br /> production companies
-            <br /> built on the fluid <br />
-            exchange of ideas and
-            <br />
-            talents.
-          </h2>
+          </AnimateTextLine>
+          <AnimateTextLines
+            items={[
+              "We are an independent",
+              "group of diverse",
+              "production companies",
+              "built on the fluid",
+              "exchange of ideas and",
+              "talents.",
+            ]}
+            className="font-RedHatDisplay-Black text-[3.2vw] 3xl:text-[2.2vw]"
+            transition={{ staggerChildren: 0.2 }}
+          />
         </div>
         <div className="flex flex-1 items-end">
-          <p className="text-secondary text-[1.8vw] 3xl:text-[1.2vw] italic">
-            Astrum Media Group is a collaborative platform <br />
-            for making a wide range of content for any <br />
-            medium through imagination, storytelling, and
-            <br /> innovation technology.
-          </p>
+          <AnimateTextLines
+            items={[
+              "Astrum Media Group is a collaborative platform",
+              "for making a wide range of content for any",
+              "medium through imagination, storytelling, and",
+              "innovation technology.",
+            ]}
+            className="text-[1.8vw] italic  text-secondary 3xl:text-[1.2vw]"
+            transition={{ staggerChildren: 0.2 }}
+          />
         </div>
       </SectionWrapper>
-      <SectionWrapper className="flex flex-row pb-[6vh] xl:pb-[15vh] 3xl:pb-[10vh] gap-[4vw]">
-        <div className="bg-[#F7F7F7] flex-col text-center flex justify-center items-center flex-1 pt-[2vh] pb-[3vh] px-[2vh] xl:pt-[4vh] xl:pb-[6vh] xl:px-[4vh]">
-          <h3 className="text-[3.2vw] 3xl:text-[2.2vw] font-RedHatDisplay-Black pb-[0.5vh]">
+      <SectionWrapper className="flex flex-row gap-[4vw] pb-[6vh] xl:pb-[15vh] 3xl:pb-[10vh]">
+        <motion.div
+          variants={slideIn({ direction: "up", duration: 0.8 })}
+          className="flex flex-1 flex-col items-center justify-center bg-[#F7F7F7] px-[2vh] pb-[3vh] pt-[2vh] text-center xl:px-[4vh] xl:pb-[6vh] xl:pt-[4vh]"
+        >
+          <h3 className="pb-[0.5vh] font-RedHatDisplay-Black text-[3.2vw] 3xl:text-[2.2vw]">
             Mission
           </h3>
-          <p className="text-secondary text-[1.8vw] 3xl:text-[1.2vw] italic">
+          <p className="text-[1.8vw] italic text-secondary 3xl:text-[1.2vw]">
             Empower clients with top-tier media <br />
             solutions by utilizing technology and <br />
             talent to create compelling & engaging <br />
             multimedia experiences.
           </p>
-        </div>
-        <div className="bg-[#F7F7F7] flex-col text-center flex justify-center items-center flex-1 pt-[2vh] pb-[3vh] px-[2vh] xl:pt-[4vh] xl:pb-[6vh] xl:px-[4vh]">
-          <h3 className="text-[3.2vw] 3xl:text-[2.2vw] font-RedHatDisplay-Black pb-[0.5vh]">
+        </motion.div>
+        <motion.div
+          variants={slideIn({ direction: "up", duration: 0.8 })}
+          className="flex flex-1 flex-col items-center justify-center bg-[#F7F7F7] px-[2vh] pb-[3vh] pt-[2vh] text-center xl:px-[4vh] xl:pb-[6vh] xl:pt-[4vh]"
+        >
+          <h3 className="pb-[0.5vh] font-RedHatDisplay-Black text-[3.2vw] 3xl:text-[2.2vw]">
             Vision
           </h3>
-          <p className="text-secondary text-[1.8vw] 3xl:text-[1.2vw] italic">
+          <p className="text-[1.8vw] italic text-secondary 3xl:text-[1.2vw]">
             Our vision is to be at the forefront <br />
             of the media industry, known for <br />
             our pioneering creativity & <br />
             cutting-edge solutions.
           </p>
-        </div>
+        </motion.div>
       </SectionWrapper>
     </>
   );

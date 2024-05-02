@@ -38,7 +38,7 @@ export const fadeIn = ({
   duration,
 }: {
   direction?: "left" | "right" | "up" | "down";
-  type: AnimationType;
+  type?: AnimationType;
   delay?: number;
   duration?: number;
 }) => {
@@ -94,7 +94,7 @@ export const slideIn = ({
   duration,
 }: {
   direction?: "left" | "right" | "up" | "down";
-  type: AnimationType;
+  type?: AnimationType;
   delay?: number;
   duration?: number;
 }) => {
