@@ -9,13 +9,13 @@ const SubscribeSectionFooter = () => {
     if (isValidEmail(email)) toast.success("Thank you for subscribing");
   };
   return (
-    <div className="w-full px-[5vw] md:pe-[15vw]">
-      <p className="pb-[3vh] font-RedHatDisplay-Bold text-[1vw]">
+    <div className="w-full px-[5vw] xl:pe-[15vw]">
+      <p className="xl:pb-[3vh] font-RedHatDisplay-Bold text-[1vw]">
         STAY UP TO DATE
       </p>
       <form
         onSubmit={handleOnSubmit}
-        className="relative flex min-h-[50px] w-full items-center border-none"
+        className="relative flex pt-[5px] xl:pt-0 xl:min-h-[50px] w-full items-center border-none"
       >
         <input
           type="email"

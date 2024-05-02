@@ -11,7 +11,7 @@ const HomeNav = () => {
   }, [location]);
 
   return (
-    <nav className="flex items-center pt-[7vh] px-[5vw] justify-between">
+    <nav className="flex items-center justify-between px-[5vw] pt-[2vh] xl:pt-[7vh]">
       <div className="w-[20%] bg-black p-1">
         <Image src="/Level-A.svg" />
       </div>
@@ -23,11 +23,14 @@ const HomeNav = () => {
               hash === "" && index === 0
                 ? "border-b-2 border-black"
                 : hash === item.path
-                ? "border-b-2 border-black"
-                : ""
+                  ? "border-b-2 border-black"
+                  : ""
             }`}
           >
-            <a href={item.path} className="text-[18px] xl:text-[1.5vw]">
+            <a
+              href={item.path}
+              className="text-[12px] md:text-[18px] xl:text-[1.5vw]"
+            >
               {item.label}
             </a>
           </li>

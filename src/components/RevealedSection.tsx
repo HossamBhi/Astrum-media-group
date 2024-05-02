@@ -30,8 +30,8 @@ const RevealedSection = () => {
   };
 
   return (
-    <div className="relative pb-[15vh] bg-white">
-      <div className="flex-1 px-[5vw] pb-[10vh]">
+    <div className="relative pb-[6vh] pt-[6vh] xl:pb-[15vh] bg-white">
+      <div className="flex-1 px-[5vw] pb-[4vh] xl:pb-[10vh]">
         <p className="pb-[0.5vh] text-[1.8vw] italic text-secondary">News</p>
         <h2 className="font-RedHatDisplay-Black text-[4.5vw]">
           Revealed and <br />
@@ -42,7 +42,7 @@ const RevealedSection = () => {
         <section
           ref={scrollRef}
           id="revealedSlider"
-          className="no-scrollbar relative flex h-full gap-[5vw] overflow-x-scroll scroll-smooth whitespace-nowrap pe-[30vw] ps-[5vw] pt-[5vh]"
+          className="no-scrollbar relative flex h-full gap-[5vw] overflow-x-scroll scroll-smooth whitespace-nowrap pe-[30vw] ps-[5vw] pt-[2vh] xl:pt-[5vh]"
         >
           {[
             {
@@ -91,7 +91,7 @@ const RevealedSection = () => {
                 />
               </div>
               <div
-                className={`flex justify-between ps-[1vw] pt-[5vh] transition-all duration-500 ${activeSlider === index ? "opacity-100" : "opacity-0"}`}
+                className={`flex justify-between ps-[1vw] pt-[2vh] xl:pt-[5vh] transition-all duration-500 ${activeSlider === index ? "opacity-100" : "opacity-0"}`}
               >
                 <div className="flex flex-col">
                   <div className="flex items-center font-RedHatDisplay-Black text-[1.1vw]">

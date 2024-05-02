@@ -19,7 +19,7 @@ const OurGroupSection = () => {
           </p>
         </div>
       </SectionWrapper>
-      <SectionWrapper className="grid grid-cols-2 gap-[4vw] gap-y-[5vw] pb-[10vh]">
+      <SectionWrapper className="grid grid-cols-2 gap-[4vw] gap-y-[5vw] xl:pb-[10vh] pb-[5vh]">
         {[
           {
             title: "Astrum Films",

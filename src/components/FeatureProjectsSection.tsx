@@ -31,7 +31,7 @@ const FeatureProjectsSection = () => {
   };
 
   return (
-    <div className="relative pb-[15vh]">
+    <div className="relative pb-[6vh] xl:pb-[15vh]">
       <SectionWrapper
         className="flex flex-row gap-[4vw] pb-[5vh]"
         id={NavLinks[3].id}
@@ -42,7 +42,7 @@ const FeatureProjectsSection = () => {
           </h2>
         </div>
         <div className="flex flex-1 items-end">
-          <p className="text-[1.8vw] text-secondary italic">
+          <p className="text-[1.8vw] italic text-secondary">
             entity comprising specialized <br />
             boutiques catering to various <br />
             media landscape facets.
@@ -93,7 +93,7 @@ const FeatureProjectsSection = () => {
             className={`flex flex-col`}
             style={{ minWidth: cardWidth }}
           >
-            <div className=" flex items-center justify-center">
+            <div className="flex items-center justify-center">
               <Image
                 className="w-[100%] object-cover"
                 src={item.poster}
@@ -101,7 +101,7 @@ const FeatureProjectsSection = () => {
               />
             </div>
             <div
-              className={`flex justify-between ps-[1vw] pt-[5vh] transition-all duration-500 ${activeSlider === index ? "opacity-100" : "opacity-0"}`}
+              className={`flex justify-between ps-[1vw] pt-[2vh] transition-all duration-500 xl:pt-[5vh] ${activeSlider === index ? "opacity-100" : "opacity-0"}`}
             >
               <div className="flex flex-col">
                 <div className="flex items-center font-RedHatDisplay-Black text-[1.1vw]">
@@ -115,7 +115,7 @@ const FeatureProjectsSection = () => {
                 <h3 className="min-w-[30vw] font-RedHatDisplay-Black text-[1.1vw]">
                   CATEGORY
                 </h3>
-                <p className="text-[1.2vw] font-medium text-secondary italic">
+                <p className="text-[1.2vw] font-medium italic text-secondary">
                   {item.category}
                 </p>
               </div>
@@ -123,18 +123,18 @@ const FeatureProjectsSection = () => {
           </div>
         ))}
       </section>
-      <div className="absolute bottom-[15vh] left-[70vw] flex items-center justify-between gap-[5vw]">
+      <div className="absolute bottom-[6vh] w-[25vw] left-[70vw] flex items-center justify-between gap-[5vw] xl:bottom-[15vh]">
         <button
           onClick={slideLeft}
-          className="flex items-center gap-4 text-[1.5vw] uppercase text-secondary"
+          className="flex items-center gap-4 text-[1.2vw] uppercase text-secondary"
         >
-          <ArrowLeft className={"h-[1.3vw] w-[1.3vw]"} /> Previous
+          <ArrowLeft className={"h-[1.1vw] w-[1.1vw]"} /> Previous
         </button>
         <button
           onClick={slideRight}
-          className="flex items-center gap-4 text-[1.5vw] uppercase text-secondary"
+          className="flex items-center gap-4 text-[1.2vw] uppercase text-secondary"
         >
-          Next <ArrowRight className={"h-[1.3vw] w-[1.3vw]"} />
+          Next <ArrowRight className={"h-[1.1vw] w-[1.1vw]"} />
         </button>
       </div>
     </div>
