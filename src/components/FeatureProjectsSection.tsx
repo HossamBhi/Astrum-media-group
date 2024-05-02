@@ -33,9 +33,9 @@ const FeatureProjectsSection = () => {
 
   return (
     <motion.div
-      whileInView="visible"
-      initial="visible"
-      className="relative pb-[6vh] xl:pb-[15vh]"
+      whileInView="animate"
+      initial="hidden"
+      className="relative pb-[6vh] xl:pb-[15vh] 3xl:pb-[10vh]"
     >
       <SectionWrapper
         className="flex flex-row gap-[4vw] pb-[5vh]"
@@ -130,7 +130,7 @@ const FeatureProjectsSection = () => {
           </div>
         ))}
       </section>
-      <div className="absolute bottom-[6vh] left-[70vw] flex w-[25vw] items-center justify-between gap-[5vw] xl:bottom-[15vh]">
+      <div className="absolute bottom-[6vh] left-[70vw] flex w-[25vw] items-center justify-between gap-[5vw] xl:bottom-[15vh] 3xl:bottom-[10vh]">
         <PrevBtn onClick={slideLeft} />
         <NextBtn onClick={slideRight} />
       </div>

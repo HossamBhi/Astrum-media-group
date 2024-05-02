@@ -5,7 +5,7 @@ const AboutSection = () => {
   return (
     <>
       <SectionWrapper
-        className="flex flex-row py-[6vh] xl:py-[15vh] gap-[4vw]"
+        className="flex flex-row py-[6vh] xl:py-[15vh] 3xl:py-[10vh] gap-[4vw]"
         id={NavLinks[1].id}
       >
         <div className="flex-1">
@@ -31,7 +31,7 @@ const AboutSection = () => {
           </p>
         </div>
       </SectionWrapper>
-      <SectionWrapper className="flex flex-row pb-[6vh] xl:pb-[15vh] gap-[4vw]">
+      <SectionWrapper className="flex flex-row pb-[6vh] xl:pb-[15vh] 3xl:pb-[10vh] gap-[4vw]">
         <div className="bg-[#F7F7F7] flex-col text-center flex justify-center items-center flex-1 pt-[2vh] pb-[3vh] px-[2vh] xl:pt-[4vh] xl:pb-[6vh] xl:px-[4vh]">
           <h3 className="text-[3.2vw] 3xl:text-[2.2vw] font-RedHatDisplay-Black pb-[0.5vh]">
             Mission

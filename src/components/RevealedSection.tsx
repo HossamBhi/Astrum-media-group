@@ -30,7 +30,7 @@ const RevealedSection = () => {
   };
 
   return (
-    <div className="relative bg-white pb-[6vh] pt-[6vh] xl:pb-[15vh]">
+    <div className="relative bg-white pb-[6vh] pt-[6vh] xl:pb-[15vh] 3xl:pb-[10vh]">
       <div className="flex-1 px-[5vw] pb-[4vh] xl:pb-[10vh]">
         <p className="pb-[0.5vh] text-[1.8vw] italic text-secondary 3xl:text-[1.2vw]">
           News

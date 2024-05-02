@@ -11,11 +11,11 @@ const HomeNav = () => {
   }, [location]);
 
   return (
-    <nav className="flex items-center justify-between px-[5vw] pt-[2vh] xl:pt-[7vh]">
-      <div className="w-[20%] bg-black p-1">
+    <nav className="flex items-center justify-between px-[5vw] pt-[2vh] xl:pt-[7vh] 3xl:xl:pt-[4vh]">
+      <div className="w-[20%] bg-black p-1 xl:w-[15vw] 3xl:w-[10%]">
         <Image src="/Level-A.svg" />
       </div>
-      <ul className="flex gap-[1vw]">
+      <ul className="flex gap-[2vw]">
         {NavLinks.map((item, index) => (
           <li
             key={item.path}
@@ -29,7 +29,7 @@ const HomeNav = () => {
           >
             <a
               href={item.path}
-              className="text-[12px] md:text-[18px] xl:text-[1.5vw]"
+              className="text-[12px] md:text-[18px] xl:text-[1.5vw] 3xl:xl:text-[1vw]"
             >
               {item.label}
             </a>
