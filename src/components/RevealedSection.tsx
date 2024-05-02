@@ -2,13 +2,14 @@ import { useRef, useState } from "react";
 import { ArrowLeft, ArrowRight } from "../assets/svg";
 import { useWindowDimensions } from "../hooks";
 import { Image } from "./ui";
+import { NextBtn, PrevBtn } from "./carousel";
 
 const RevealedSection = () => {
   const scrollRef = useRef(null);
   const [activeSlider, setActiveSlider] = useState(0);
   const { width } = useWindowDimensions();
   const cardWidth = width * 0.6;
-  const scrollWidth = width * 0.60;
+  const scrollWidth = width * 0.6;
   const slideLeft = () => {
     const slider = document.getElementById("revealedSlider");
     if (slider && activeSlider > 0) {
@@ -30,10 +31,12 @@ const RevealedSection = () => {
   };
 
   return (
-    <div className="relative pb-[6vh] pt-[6vh] xl:pb-[15vh] bg-white">
+    <div className="relative bg-white pb-[6vh] pt-[6vh] xl:pb-[15vh]">
       <div className="flex-1 px-[5vw] pb-[4vh] xl:pb-[10vh]">
-        <p className="pb-[0.5vh] text-[1.8vw] italic text-secondary">News</p>
-        <h2 className="font-RedHatDisplay-Black text-[4.5vw]">
+        <p className="pb-[0.5vh] text-[1.8vw] italic text-secondary 3xl:text-[1.2vw]">
+          News
+        </p>
+        <h2 className="font-RedHatDisplay-Black text-[4.5vw] 3xl:text-[3vw]">
           Revealed and <br />
           Upcoming Projects
         </h2>
@@ -91,23 +94,23 @@ const RevealedSection = () => {
                 />
               </div>
               <div
-                className={`flex justify-between ps-[1vw] pt-[2vh] xl:pt-[5vh] transition-all duration-500 ${activeSlider === index ? "opacity-100" : "opacity-0"}`}
+                className={`flex justify-between ps-[1vw] pt-[2vh] transition-all duration-500 xl:pt-[5vh] ${activeSlider === index ? "opacity-100" : "opacity-0"}`}
               >
                 <div className="flex flex-col">
-                  <div className="flex items-center font-RedHatDisplay-Black text-[1.1vw]">
+                  <div className="flex items-center font-RedHatDisplay-Black text-[1.1vw] 3xl:text-[0.73vw]">
                     M&nbsp;&nbsp;
                     <span className="h-[2px] w-[1.2vw] bg-black"></span>
                     &nbsp; Y
                   </div>
-                  <p className="text-[1.1vw] font-bold text-black">
+                  <p className="text-[1.1vw] 3xl:text-[0.73vw] font-bold text-black">
                     {item.date}
                   </p>
                 </div>
                 <div className="flex flex-col">
-                  <h3 className="min-w-[30vw] font-RedHatDisplay-Black text-[1.1vw]">
+                  <h3 className="min-w-[30vw] font-RedHatDisplay-Black text-[1.1vw] 3xl:text-[0.73vw]">
                     CATEGORY
                   </h3>
-                  <p className="text-[1.2vw] font-medium text-secondary">
+                  <p className="text-[1.2vw] 3xl:text-[0.8vw] font-medium text-secondary">
                     {item.category}
                   </p>
                 </div>
@@ -116,18 +119,8 @@ const RevealedSection = () => {
           ))}
         </section>
         <div className="absolute left-0 top-0 flex w-full items-center justify-between gap-[5vw] px-[5vw]">
-          <button
-            onClick={slideLeft}
-            className="flex items-center gap-4 text-[1.5vw] uppercase text-secondary"
-          >
-            <ArrowLeft className={"h-[1.3vw] w-[1.3vw]"} /> Previous
-          </button>
-          <button
-            onClick={slideRight}
-            className="flex items-center gap-4 text-[1.5vw] uppercase text-secondary"
-          >
-            Next <ArrowRight className={"h-[1.3vw] w-[1.3vw]"} />
-          </button>
+          <PrevBtn onClick={slideLeft} />
+          <NextBtn onClick={slideRight} />
         </div>
       </div>
     </div>

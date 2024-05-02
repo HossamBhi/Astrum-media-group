@@ -3,6 +3,8 @@ import { ArrowLeft, ArrowRight } from "../assets/svg";
 import { NavLinks } from "../utils/helper";
 import { Image, SectionWrapper } from "./ui";
 import { useWindowDimensions } from "../hooks";
+import { NextBtn, PrevBtn } from "./carousel";
+import { motion } from "framer-motion";
 
 const FeatureProjectsSection = () => {
   const scrollRef = useRef(null);
@@ -31,18 +33,22 @@ const FeatureProjectsSection = () => {
   };
 
   return (
-    <div className="relative pb-[6vh] xl:pb-[15vh]">
+    <motion.div
+      whileInView="visible"
+      initial="visible"
+      className="relative pb-[6vh] xl:pb-[15vh]"
+    >
       <SectionWrapper
         className="flex flex-row gap-[4vw] pb-[5vh]"
         id={NavLinks[3].id}
       >
         <div className="flex-1">
-          <h2 className="font-RedHatDisplay-Black text-[5vw]">
+          <h2 className="font-RedHatDisplay-Black text-[5vw] 3xl:text-[3.3vw]">
             Feature Projects
           </h2>
         </div>
         <div className="flex flex-1 items-end">
-          <p className="text-[1.8vw] italic text-secondary">
+          <p className="text-[1.8vw] italic text-secondary 3xl:text-[1.2vw]">
             entity comprising specialized <br />
             boutiques catering to various <br />
             media landscape facets.
@@ -104,18 +110,20 @@ const FeatureProjectsSection = () => {
               className={`flex justify-between ps-[1vw] pt-[2vh] transition-all duration-500 xl:pt-[5vh] ${activeSlider === index ? "opacity-100" : "opacity-0"}`}
             >
               <div className="flex flex-col">
-                <div className="flex items-center font-RedHatDisplay-Black text-[1.1vw]">
+                <div className="flex items-center font-RedHatDisplay-Black text-[1.1vw] 3xl:text-[0.73vw]">
                   M&nbsp;&nbsp;
                   <span className="h-[2px] w-[1.2vw] bg-black"></span>
                   &nbsp; Y
                 </div>
-                <p className="text-[1.1vw] font-bold text-black">{item.date}</p>
+                <p className="text-[1.1vw] font-bold text-black 3xl:text-[0.73vw]">
+                  {item.date}
+                </p>
               </div>
               <div className="flex flex-col">
-                <h3 className="min-w-[30vw] font-RedHatDisplay-Black text-[1.1vw]">
+                <h3 className="min-w-[30vw] font-RedHatDisplay-Black text-[1.1vw] 3xl:text-[0.73vw]">
                   CATEGORY
                 </h3>
-                <p className="text-[1.2vw] font-medium italic text-secondary">
+                <p className="text-[1.2vw] font-medium italic text-secondary 3xl:text-[0.8vw]">
                   {item.category}
                 </p>
               </div>
@@ -123,21 +131,11 @@ const FeatureProjectsSection = () => {
           </div>
         ))}
       </section>
-      <div className="absolute bottom-[6vh] w-[25vw] left-[70vw] flex items-center justify-between gap-[5vw] xl:bottom-[15vh]">
-        <button
-          onClick={slideLeft}
-          className="flex items-center gap-4 text-[1.2vw] uppercase text-secondary"
-        >
-          <ArrowLeft className={"h-[1.1vw] w-[1.1vw]"} /> Previous
-        </button>
-        <button
-          onClick={slideRight}
-          className="flex items-center gap-4 text-[1.2vw] uppercase text-secondary"
-        >
-          Next <ArrowRight className={"h-[1.1vw] w-[1.1vw]"} />
-        </button>
+      <div className="absolute bottom-[6vh] left-[70vw] flex w-[25vw] items-center justify-between gap-[5vw] xl:bottom-[15vh]">
+        <PrevBtn onClick={slideLeft} />
+        <NextBtn onClick={slideRight} />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

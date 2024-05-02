@@ -25,10 +25,10 @@ const OurPeopleSection = () => {
         id={NavLinks[3].id}
       >
         <div className="flex-1">
-          <h2 className="font-RedHatDisplay-Black text-[4.5vw]">Our People</h2>
+          <h2 className="font-RedHatDisplay-Black text-[4.5vw] 3xl:text-[3vw]">Our People</h2>
         </div>
         <div className="flex flex-1 items-end">
-          <p className="text-[1.8vw] italic text-secondary">
+          <p className="text-[1.8vw] 3xl:text-[1.2vw] italic text-secondary">
             entity comprising specialized <br />
             boutiques catering to various <br />
             media landscape facets.
@@ -92,7 +92,7 @@ const OurPeopleSection = () => {
                     <div className="flex items-center font-RedHatDisplay-Black text-[1.5vw] text-white">
                       {item.name}
                     </div>
-                    <p className="font-RedHatDisplay-Medium text-[1.1vw] text-white">
+                    <p className="font-RedHatDisplay-Medium text-[1.1vw] 3xl:text-[0.73vw] text-white">
                       {item.bio}
                     </p>
                   </div>
