@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { Tilt } from "react-tilt";
 import { NavLinks } from "../utils/helper";
-import { animateText } from "../utils/motionHelper";
+import { zoomIn } from "../utils/motionHelper";
+import { AnimateTextLine, AnimateTextLines } from "./animation";
 import { Image, SectionWrapper } from "./ui";
 
 const defaultOptions = {
@@ -17,28 +17,24 @@ const defaultOptions = {
 };
 
 const OurGroupSection = () => (
-  <>
+  <div className="relative bg-white pt-[5vh]">
     <SectionWrapper
       className="flex flex-row gap-[4vw] pb-[5vh]"
       id={NavLinks[3].id}
     >
-      <motion.div className="flex-1">
-        <motion.h2
-          variants={animateText}
-          className="font-RedHatDisplay-Black text-[4.5vw] 3xl:text-[3vw]"
-        >
-          Our Group
-        </motion.h2>
-      </motion.div>
+      <AnimateTextLine className="flex-1 font-RedHatDisplay-Black text-[4.5vw] 3xl:text-[3vw]">
+        Our Group
+      </AnimateTextLine>
       <div className="flex flex-1 items-end">
-        <motion.p
-          variants={animateText}
+        <AnimateTextLines
+          items={[
+            "entity comprising specialized",
+            "boutiques catering to various",
+            "media landscape facets.",
+          ]}
           className="text-[1.8vw] italic text-secondary 3xl:text-[1.2vw]"
-        >
-          entity comprising specialized <br />
-          boutiques catering to various <br />
-          media landscape facets.
-        </motion.p>
+          transition={{ staggerChildren: 0.2 }}
+        />
       </div>
     </SectionWrapper>
     <SectionWrapper className="grid grid-cols-2 gap-[4vw] gap-y-[5vw] pb-[5vh] xl:pb-[10vh] 3xl:gap-y-[4vw]">
@@ -68,8 +64,19 @@ const OurGroupSection = () => (
           logo: "/icons/Makina-icon.svg",
         },
       ].map((item, index) => (
-        <Tilt options={defaultOptions}>
-          <div key={index} className="flex flex-col">
+        <motion.div
+          variants={zoomIn({
+            duration: 0.8,
+            delay: index * 0.3,
+          })}
+        >
+          {/* <Tilt options={defaultOptions}> */}
+          <a
+            key={index}
+            href={item.path}
+            target="_blank"
+            className="flex flex-col"
+          >
             <div className="flex h-[23vw] items-center justify-center bg-black 3xl:h-[20vw]">
               <Image
                 className="w-[14%] 3xl:w-[10%]"
@@ -94,11 +101,12 @@ const OurGroupSection = () => (
                 {item.des}
               </p>
             </div>
-          </div>
-        </Tilt>
+          </a>
+          {/* </Tilt> */}
+        </motion.div>
       ))}
     </SectionWrapper>
-  </>
+  </div>
 );
 
 export default OurGroupSection;

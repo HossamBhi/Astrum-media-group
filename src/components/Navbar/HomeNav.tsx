@@ -29,7 +29,7 @@ const HomeNav = () => {
           >
             <a
               href={item.path}
-              className="text-[12px] md:text-[18px] xl:text-[1.5vw] 3xl:xl:text-[1vw]"
+              className="text-[1vw] md:text-[18px] xl:text-[1.5vw] 3xl:xl:text-[1vw]"
             >
               {item.label}
             </a>
