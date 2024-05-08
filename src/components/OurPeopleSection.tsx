@@ -1,9 +1,9 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useWindowDimensions } from "../hooks";
 import { NavLinks } from "../utils/helper";
-import { Image, SectionWrapper } from "./ui";
 import { AnimateTextLine, AnimateTextLines } from "./animation";
+import { SectionWrapper } from "./ui";
 
 const OUR_GROUP = [
   {

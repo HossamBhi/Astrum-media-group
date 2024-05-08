@@ -58,7 +58,7 @@ const FeatureProjectsSection = () => {
   );
 
   const cardWidth = width * 0.6;
-  const scrollWidth = width * 0.7;
+  // const scrollWidth = width * 0.7;
   // const slideLeft = () => {
   //   const slider = document.getElementById("slider");
   //   if (slider && activeSlider > 0) {
