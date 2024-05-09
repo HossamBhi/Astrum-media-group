@@ -4,6 +4,7 @@ import { useWindowDimensions } from "../hooks";
 import { NavLinks } from "../utils/helper";
 import { AnimateTextLine, AnimateTextLines } from "./animation";
 import { Image, SectionWrapper } from "./ui";
+import { zoomIn } from "../utils/motionHelper";
 const data = [
   {
     title: "Astrum Films",
@@ -50,7 +51,7 @@ const FeatureProjectsSection = () => {
   const x = useTransform(
     scrollYProgress,
     [0, 1],
-    ["1%", `-${70 * data.length}%`],
+    ["0%", `-${70 * data.length}%`],
   );
   const y = useTransform(scrollYProgress, [0.7, 1], ["0", `-100%`]);
   const position = useTransform(scrollYProgress, (pos) =>
@@ -84,7 +85,7 @@ const FeatureProjectsSection = () => {
       ref={scrollRef}
       whileInView="animate"
       initial="hidden"
-      className="relative h-[300vh] pb-[6vh] xl:pb-[15vh] 3xl:pb-[10vh]"
+      className="relative h-[400vh] pb-[6vh] xl:pb-[15vh] 3xl:pb-[10vh]"
     >
       <motion.div
         style={{ position, y }}
@@ -113,11 +114,15 @@ const FeatureProjectsSection = () => {
         <motion.section
           style={{ x }}
           id="slider"
-          className="relative flex h-full gap-[5vw] pe-[30vw] ps-[5vw]"
+          className="relative flex h-full gap-[5vw] pe-[30vw] ps-[4vw]"
           // className="no-scrollbar relative flex h-full gap-[5vw] overflow-x-scroll scroll-smooth whitespace-nowrap pe-[30vw] ps-[5vw]"
         >
           {data.map((item, index) => (
-            <div
+            <motion.div
+              // variants={zoomIn({
+              //   duration: 0.8,
+              // })}
+              // whileInView={undefined}
               key={index}
               className={`flex flex-col`}
               style={{ minWidth: cardWidth }}
@@ -151,7 +156,7 @@ const FeatureProjectsSection = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </motion.section>
       </motion.div>

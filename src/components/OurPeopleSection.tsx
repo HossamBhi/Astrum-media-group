@@ -62,7 +62,7 @@ const OurPeopleSection = () => {
   //   console.log(document.getElementById("group-container").offsetWidth);
   // }, []);
   return (
-    <div ref={scrollRef} className="relative h-[300vh]">
+    <div ref={scrollRef} className="relative h-[400vh]">
       <motion.div
         style={{ position, y }}
         className="top-0 flex h-screen w-full flex-col justify-evenly bg-white pb-[5vh] pt-[5vh]"

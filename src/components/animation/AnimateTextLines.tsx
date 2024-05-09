@@ -17,7 +17,7 @@ const AnimateTextLines = ({
         variants={{
           hidden: {
             opacity: 0,
-            y: 50,
+            y: 30,
           },
 
           animate: {

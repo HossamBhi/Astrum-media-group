@@ -1,9 +1,13 @@
 import { OUR_EMAIL } from "../utils/helper";
+import { slideIn } from "../utils/motionHelper";
 import SubscribeSectionFooter from "./SubscribeSectionFooter";
 import { SectionWrapper } from "./ui";
 const FooterSection = () => {
   return (
-    <SectionWrapper className="flex justify-between pb-[10vh]">
+    <SectionWrapper
+      variants={slideIn({ direction: "right", duration: 1 })}
+      className="flex justify-between pb-[10vh]"
+    >
       <div className="flex w-[50%] items-center justify-start">
         <SubscribeSectionFooter />
       </div>

@@ -3,7 +3,7 @@ import { AnimationType } from "framer-motion";
 export const animateText = {
   hidden: {
     opacity: 0,
-    y: 50,
+    y: 30,
   },
 
   animate: {
@@ -71,7 +71,7 @@ export const zoomIn = ({
 }) => {
   return {
     hidden: {
-      scale: 0.5,
+      scale: 0.8,
       opacity: 0,
     },
     animate: {

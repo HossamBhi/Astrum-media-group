@@ -2,6 +2,8 @@ import { useRef } from "react";
 import { useWindowDimensions } from "../hooks";
 import { Image } from "./ui";
 import { useScroll, useTransform, motion } from "framer-motion";
+import { AnimateTextLines } from "./animation";
+import { animateText } from "../utils/motionHelper";
 const data = [
   {
     title: "Astrum Films",
@@ -78,26 +80,41 @@ const RevealedSection = () => {
   return (
     <div
       ref={scrollRef}
-      className="relative h-[300vh] bg-white pb-[6vh] pt-[6vh] xl:pb-[15vh] 3xl:pb-[10vh]"
+      className="relative h-[400vh] bg-white pb-[6vh] pt-[6vh] xl:pb-[15vh] 3xl:pb-[10vh]"
     >
       <motion.div
         style={{ position, y }}
         className="top-0 flex h-screen w-full flex-col justify-evenly bg-white pb-[5vh] pt-[5vh]"
       >
         <div className="flex-1 px-[5vw] pb-[4vh]">
-          <p className="pb-[0.5vh] text-[1.8vw] italic text-secondary 3xl:text-[1.2vw]">
+          <motion.p
+            variants={{
+              hidden: {
+                opacity: 0,
+                y: 30,
+              },
+
+              animate: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.8, delay: 0.2 },
+              },
+            }}
+            className="pb-[0.5vh] text-[1.8vw] italic text-secondary 3xl:text-[1.2vw]"
+          >
             News
-          </p>
-          <h2 className="font-RedHatDisplay-Black text-[4.5vw] 3xl:text-[3vw]">
-            Revealed and <br />
-            Upcoming Projects
-          </h2>
+          </motion.p>
+
+          <AnimateTextLines
+            items={["Revealed and", "Upcoming Projects"]}
+            className="font-RedHatDisplay-Black text-[4.5vw] 3xl:text-[3vw]"
+          />
         </div>
         <div className="relative">
           <motion.section
             style={{ x }}
             id="revealedSlider"
-            className="flex h-full gap-[5vw]  pe-[30vw] ps-[5vw] pt-[2vh]"
+            className="flex h-full gap-[5vw] pe-[30vw] ps-[4vw] pt-[2vh]"
           >
             {data.map((item, index) => (
               <div
