@@ -72,7 +72,6 @@ const FeatureProjectsSection = () => {
       >
         <SectionWrapper
           className="flex flex-row gap-[4vw] pb-[5vh]"
-          id={NavLinks[3].id}
         >
           <AnimateTextLine className="flex-1 font-RedHatDisplay-Black text-[5vw] 3xl:text-[3.3vw]">
             Feature Projects

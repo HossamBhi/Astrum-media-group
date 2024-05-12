@@ -1,23 +1,16 @@
-import { OUR_EMAIL } from "../utils/helper";
-import { fadeIn, slideIn } from "../utils/motionHelper";
-import { SectionWrapper } from "./ui";
 import { motion } from "framer-motion";
+import { NavLinks, OUR_EMAIL } from "../utils/helper";
+import { slideIn } from "../utils/motionHelper";
+import { SectionWrapper } from "./ui";
 
 const ContactSection = () => {
   return (
     <SectionWrapper
       variants={slideIn({ direction: "left", duration: 1 })}
       className="relative bg-white pb-[10vh] pt-[5vh]"
+      id={NavLinks[5].id}
     >
       <motion.a
-        // variants={{
-        //   animateLine: {
-        //     // backgroundColor: "#F7F7F7",
-        //   },
-        //   hideLine: {
-        //     backgroundColor: "#fff",
-        //   },
-        // }}
         href={`mailto:${OUR_EMAIL}`}
         aria-label={`Send mail to ${OUR_EMAIL}`}
         whileHover={"animateLine"}
@@ -36,7 +29,6 @@ const ContactSection = () => {
           />
         </motion.h3>
         <motion.a
-          // variants={fadeIn({ direction: "up", duration: 0.5 })}
           className="font-RedHatDisplay-Medium text-[2.5vw] text-black"
           href={`mailto:${OUR_EMAIL}`}
           aria-label={`Send mail to ${OUR_EMAIL}`}

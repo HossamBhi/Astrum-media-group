@@ -1,9 +1,8 @@
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { useWindowDimensions } from "../hooks";
-import { Image } from "./ui";
-import { useScroll, useTransform, motion } from "framer-motion";
 import { AnimateTextLines } from "./animation";
-import { animateText } from "../utils/motionHelper";
+import { NavLinks } from "../utils/helper";
 const data = [
   {
     title: "Astrum Films",
@@ -80,10 +79,11 @@ const RevealedSection = () => {
   return (
     <div
       ref={scrollRef}
-      className="relative bg-white md:pt-[6vh] md:h-[400vh] md:pb-[6vh] xl:pb-[15vh] 3xl:pb-[10vh]"
+      className="relative bg-white md:h-[400vh] md:pb-[6vh] md:pt-[6vh] xl:pb-[15vh] 3xl:pb-[10vh]"
     >
       <motion.div
         style={width > 768 ? { position, y } : {}}
+        id={NavLinks[4].id}
         className="top-0 flex w-full flex-col justify-evenly bg-white pb-[5vh] pt-[5vh] md:h-screen"
       >
         <div className="px-[5vw] pb-[4vh]">

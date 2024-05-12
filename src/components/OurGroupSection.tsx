@@ -20,7 +20,7 @@ const OurGroupSection = () => (
   <div className="relative bg-white pt-[5vh]">
     <SectionWrapper
       className="flex flex-row gap-[4vw] pb-[5vh]"
-      id={NavLinks[3].id}
+      id={NavLinks[2].id}
     >
       <AnimateTextLine className="flex-1 font-RedHatDisplay-Black text-[4.5vw] 3xl:text-[3vw]">
         Our Group
