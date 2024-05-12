@@ -57,15 +57,15 @@ const OurPeopleSection = () => {
     pos === 1 || pos === 0 ? "relative" : "fixed",
   );
 
-  const cardWidth = width * 0.6;
+  const cardWidth = width > 768 ? width * 0.6 : undefined;
   // useEffect(() => {
   //   console.log(document.getElementById("group-container").offsetWidth);
   // }, []);
   return (
-    <div ref={scrollRef} className="relative h-[400vh]">
+    <div ref={scrollRef} className="relative px-[4vw] md:h-[400vh] md:px-[0]">
       <motion.div
-        style={{ position, y }}
-        className="top-0 flex h-screen w-full flex-col justify-evenly bg-white pb-[5vh] pt-[5vh]"
+        style={width > 768 ? { position, y } : {}}
+        className="top-0 flex w-full flex-col justify-evenly bg-white pb-[5vh] pt-[5vh] md:h-screen"
       >
         <SectionWrapper
           className="flex w-full flex-row gap-[4vw] pb-[5vh]"
@@ -87,35 +87,33 @@ const OurPeopleSection = () => {
             />
           </div>
         </SectionWrapper>
-        <motion.div
-          // style={{ position }}
-          className="h-full items-center overflow-hidden bg-white"
-        >
+        <motion.div className="h-full items-center overflow-hidden bg-white">
           <motion.div
-            style={{ x }}
+            style={width > 768 ? { x } : {}}
             id="group-container"
-            className="flex h-full gap-[5vw] "
+            className="grid h-full grid-cols-2 gap-[5vw] md:flex"
           >
             {OUR_GROUP.map((item, index) => (
               <div
                 key={index}
-                className={`relative flex h-full w-[50%] flex-col`}
+                className={`group relative flex h-full flex-col md:w-[50%]`}
                 style={{ minWidth: cardWidth }}
               >
                 <div
-                  className="flex size-full items-center justify-center bg-black"
-                  style={{
-                    backgroundImage: `url(${item.poster})`,
-                    backgroundPosition: "top",
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "cover",
-                  }}
+                  className="flex size-full items-center justify-center overflow-hidden"
+                  // style={{
+                  //   backgroundImage: `url(${item.poster})`,
+                  //   backgroundPosition: "top",
+                  //   backgroundRepeat: "no-repeat",
+                  //   backgroundSize: "cover",
+                  // }}
                 >
-                  {/* <Image
-                    className="h-full object-cover w-full"
+                  <motion.img
+                    whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                    className="h-full w-full object-cover group-hover:scale-[1.05] duration-200"
                     src={item.poster}
                     alt={item.name}
-                  /> */}
+                  />
                 </div>
                 <div
                   className={`absolute bottom-0 left-0 right-0 top-0 flex h-full w-full items-end justify-between p-[5%]`}

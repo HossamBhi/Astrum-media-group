@@ -37,7 +37,7 @@ const OurGroupSection = () => (
         />
       </div>
     </SectionWrapper>
-    <SectionWrapper className="grid grid-cols-2 gap-[4vw] gap-y-[5vw] pb-[5vh] xl:pb-[10vh] 3xl:gap-y-[4vw]">
+    <SectionWrapper className="grid grid-cols-1 md:grid-cols-2 gap-[4vw] gap-y-[5vw] pb-[5vh] xl:pb-[10vh] 3xl:gap-y-[4vw]">
       {[
         {
           title: "Astrum Films",
@@ -77,7 +77,7 @@ const OurGroupSection = () => (
             target="_blank"
             className="flex flex-col"
           >
-            <div className="flex h-[23vw] items-center justify-center bg-black 3xl:h-[20vw]">
+            <div className="flex h-[40vw] md:h-[23vw] items-center justify-center bg-black 3xl:h-[20vw]">
               <Image
                 className="w-[14%] 3xl:w-[10%]"
                 src={item.logo}
