@@ -1,8 +1,9 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+import { useRef, useState } from "react";
 import { useWindowDimensions } from "../hooks";
-import { AnimateTextLines } from "./animation";
 import { NavLinks } from "../utils/helper";
+import { AnimateTextLines } from "./animation";
+import { NextBtn, PrevBtn } from "./carousel";
 const data = [
   {
     title: "Astrum Films",
@@ -39,54 +40,40 @@ const data = [
 ];
 const RevealedSection = () => {
   const scrollRef = useRef(null);
-  // const [activeSlider, setActiveSlider] = useState(0);
+  const [activeSlider, setActiveSlider] = useState(0);
   const { width } = useWindowDimensions();
   const cardWidth = width * 0.6;
-  const { scrollYProgress } = useScroll({
-    target: scrollRef,
-    offset: ["start start", "end start"],
-  });
-  const x = useTransform(
-    scrollYProgress,
-    [0, 1],
-    ["1%", `-${70 * data.length}%`],
-  );
-  const y = useTransform(scrollYProgress, [0.7, 1], ["0", `-100%`]);
-  const position = useTransform(scrollYProgress, (pos) =>
-    pos === 1 || pos === 0 ? "relative" : "fixed",
-  );
-  // const scrollWidth = width * 0.6;
-  // const slideLeft = () => {
-  //   const slider = document.getElementById("revealedSlider");
-  //   if (slider && activeSlider > 0) {
-  //     setActiveSlider(
-  //       Math.ceil((slider.scrollLeft - scrollWidth) / scrollWidth),
-  //     );
-  //     slider.scrollLeft = slider?.scrollLeft - scrollWidth;
-  //   }
-  // };
+  const scrollWidth = width * 0.65;
+  const slideLeft = () => {
+    const slider = document.getElementById("revealedSlider");
+    if (slider && activeSlider > 0) {
+      setActiveSlider(
+        Math.ceil((slider.scrollLeft - scrollWidth) / scrollWidth),
+      );
+      slider.scrollLeft = slider?.scrollLeft - scrollWidth;
+    }
+  };
 
-  // const slideRight = () => {
-  //   const slider = document.getElementById("revealedSlider");
-  //   if (slider && activeSlider < 3) {
-  //     setActiveSlider(
-  //       Math.ceil((slider.scrollLeft + scrollWidth) / scrollWidth),
-  //     );
-  //     slider.scrollLeft = slider?.scrollLeft + scrollWidth;
-  //   }
-  // };
+  const slideRight = () => {
+    const slider = document.getElementById("revealedSlider");
+    if (slider && activeSlider < 3) {
+      setActiveSlider(
+        Math.ceil((slider.scrollLeft + scrollWidth) / scrollWidth),
+      );
+      slider.scrollLeft = slider?.scrollLeft + scrollWidth;
+    }
+  };
 
   return (
     <div
       ref={scrollRef}
-      className="relative bg-white md:h-[400vh] md:pb-[6vh] md:pt-[6vh] xl:pb-[15vh] 3xl:pb-[10vh]"
+      className="relative bg-white md:pb-[6vh] md:pt-[6vh] xl:pb-[15vh] 3xl:pb-[10vh]"
     >
       <motion.div
-        style={width > 768 ? { position, y } : {}}
         id={NavLinks[4].id}
-        className="top-0 flex w-full flex-col justify-evenly bg-white pb-[5vh] pt-[5vh] md:h-screen"
+        className="top-0 flex w-full flex-col justify-evenly bg-white pb-[5vh] pt-[5vh]"
       >
-        <div className="px-[5vw] pb-[4vh]">
+        <div className="px-[5vw] md:pb-[4vh]">
           <motion.p
             variants={{
               hidden: {
@@ -112,9 +99,9 @@ const RevealedSection = () => {
         </div>
         <div className="relative flex-1">
           <motion.section
-            style={width > 768 ? { x } : {}}
             id="revealedSlider"
-            className="flex h-full flex-col gap-[5vw] pe-[4vw] ps-[4vw] pt-[2vh] md:flex-row md:pe-[30vw]"
+            className="no-scrollbar relative flex h-full flex-col gap-[5vw] overflow-x-scroll scroll-smooth whitespace-nowrap pe-[4vw] ps-[4vw] pt-[2vh] md:flex-row md:pe-[30vw] xl:pt-[5vh]"
+            // className="flex h-full gap-[5vw]  pe-[30vw] ps-[5vw] pt-[2vh] xl:pt-[5vh]"
           >
             {data.map((item, index) => (
               <motion.div
@@ -153,10 +140,10 @@ const RevealedSection = () => {
               </motion.div>
             ))}
           </motion.section>
-          {/* <div className="absolute left-0 -top-[2vh] xl:-top-[5vh] flex w-full items-center justify-between gap-[5vw] px-[5vw]">
-          <PrevBtn onClick={slideLeft} />
-          <NextBtn onClick={slideRight} />
-        </div> */}
+          <div className="absolute -top-0 left-0 hidden md:flex w-full items-center justify-between gap-[5vw] px-[5vw] xl:-top-0">
+            <PrevBtn onClick={slideLeft} />
+            <NextBtn onClick={slideRight} />
+          </div>
         </div>
       </motion.div>
     </div>

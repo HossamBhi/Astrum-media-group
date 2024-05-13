@@ -1,8 +1,9 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+import { useRef, useState } from "react";
 import { useWindowDimensions } from "../hooks";
 import { AnimateTextLine, AnimateTextLines } from "./animation";
 import { SectionWrapper } from "./ui";
+import { NextBtn, PrevBtn } from "./carousel";
 
 const data = [
   {
@@ -41,34 +42,38 @@ const data = [
 
 const FeatureProjectsSection = () => {
   const scrollRef = useRef(null);
+  const [activeSlider, setActiveSlider] = useState(0);
   const { width } = useWindowDimensions();
-  const { scrollYProgress } = useScroll({
-    target: scrollRef,
-    offset: ["start start", "end start"],
-  });
-  const x = useTransform(
-    scrollYProgress,
-    [0, 1],
-    ["0%", `-${70 * data.length}%`],
-  );
-  const y = useTransform(scrollYProgress, [0.7, 1], ["0", `-100%`]);
-  const position = useTransform(scrollYProgress, (pos) =>
-    pos === 1 || pos === 0 ? "relative" : "fixed",
-  );
-
   const cardWidth = width * 0.6;
+  const scrollWidth = width * 0.65;
+  const slideLeft = () => {
+    const slider = document.getElementById("slider");
+    if (slider && activeSlider > 0) {
+      setActiveSlider(
+        Math.ceil((slider.scrollLeft - scrollWidth) / scrollWidth),
+      );
+      slider.scrollLeft = slider?.scrollLeft - scrollWidth;
+    }
+  };
+
+  const slideRight = () => {
+    const slider = document.getElementById("slider");
+    if (slider && activeSlider < 3) {
+      setActiveSlider(
+        Math.ceil((slider.scrollLeft + scrollWidth) / scrollWidth),
+      );
+      slider.scrollLeft = slider?.scrollLeft + scrollWidth;
+    }
+  };
 
   return (
     <motion.div
       ref={scrollRef}
       whileInView="animate"
       initial="hidden"
-      className="relative md:h-[400vh] md:pb-[6vh] xl:pb-[15vh] 3xl:pb-[10vh]"
+      className="relative md:pb-[6vh] xl:pb-[15vh] 3xl:pb-[10vh]"
     >
-      <motion.div
-        style={width > 768 ? { position, y } : {}}
-        className="top-0 w-full bg-white pt-[5vh] md:fixed md:h-screen"
-      >
+      <motion.div className="w-full bg-white md:pt-[5vh]">
         <SectionWrapper className="flex flex-row gap-[4vw] pb-[5vh]">
           <AnimateTextLine className="flex-1 font-RedHatDisplay-Black text-[5vw] 3xl:text-[3.3vw]">
             Feature Projects
@@ -87,10 +92,9 @@ const FeatureProjectsSection = () => {
           </div>
         </SectionWrapper>
         <motion.section
-          style={width > 768 ? { x } : {}}
           id="slider"
-          className="relative flex h-full flex-col gap-[5vw] pe-[4vw] ps-[4vw] md:flex-row md:pe-[30vw]"
-          // className="no-scrollbar relative flex h-full gap-[5vw] overflow-x-scroll scroll-smooth whitespace-nowrap pe-[30vw] ps-[5vw]"
+          // className="relative flex h-full flex-col gap-[5vw] pe-[4vw] ps-[4vw] md:flex-row md:pe-[30vw]"
+          className="no-scrollbar relative flex h-full gap-[5vw] overflow-x-scroll scroll-smooth whitespace-nowrap ps-[5vw] md:pe-[30vw]"
         >
           {data.map((item, index) => (
             <motion.div
@@ -107,7 +111,7 @@ const FeatureProjectsSection = () => {
                 />
               </div>
               <div
-                className={`flex justify-between ps-[1vw] pt-[2vh] text-[1.5vw] transition-all duration-500 md:text-[1.1vw] xl:pt-[5vh] 3xl:text-[0.73vw]`}
+                className={`flex justify-between ps-[1vw] pt-[2vh] text-[1.5vw] transition-all duration-500 md:text-[1.1vw] xl:pt-[5vh] 3xl:text-[0.73vw] ${activeSlider === index ? "opacity-100" : "opacity-0"}`}
               >
                 <div className="flex flex-col">
                   <div className="flex items-center font-RedHatDisplay-Black">
@@ -130,10 +134,10 @@ const FeatureProjectsSection = () => {
           ))}
         </motion.section>
       </motion.div>
-      {/* <div className="absolute bottom-[6vh] left-[70vw] flex w-[25vw] items-center justify-between gap-[5vw] xl:bottom-[15vh] 3xl:bottom-[10vh]">
+      <div className="absolute bottom-[1vh] left-[70vw] flex w-[25vw] items-center justify-between gap-[5vw] md:bottom-[6vh] xl:bottom-[15vh] 3xl:bottom-[10vh]">
         <PrevBtn onClick={slideLeft} />
         <NextBtn onClick={slideRight} />
-      </div> */}
+      </div>
     </motion.div>
   );
 };
