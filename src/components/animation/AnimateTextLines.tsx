@@ -12,8 +12,9 @@ const AnimateTextLines = ({
     initial="hidden"
     transition={{ staggerChildren: 0.2 }}
   >
-    {items?.map((item) => (
+    {items?.map((item, index) => (
       <motion.div
+        key={index}
         variants={{
           hidden: {
             opacity: 0,

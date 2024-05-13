@@ -37,7 +37,7 @@ const OurGroupSection = () => (
         />
       </div>
     </SectionWrapper>
-    <SectionWrapper className="grid grid-cols-1 md:grid-cols-2 gap-[4vw] gap-y-[5vw] pb-[5vh] xl:pb-[10vh] 3xl:gap-y-[4vw]">
+    <SectionWrapper className="grid grid-cols-1 gap-[4vw] gap-y-[5vw] pb-[5vh] md:grid-cols-2 xl:pb-[10vh] 3xl:gap-y-[4vw]">
       {[
         {
           title: "Astrum Films",
@@ -65,19 +65,15 @@ const OurGroupSection = () => (
         },
       ].map((item, index) => (
         <motion.div
+          key={index}
           variants={zoomIn({
             duration: 0.8,
             delay: index * 0.3,
           })}
         >
           {/* <Tilt options={defaultOptions}> */}
-          <a
-            key={index}
-            href={item.path}
-            target="_blank"
-            className="flex flex-col"
-          >
-            <div className="flex h-[40vw] md:h-[23vw] items-center justify-center bg-black 3xl:h-[20vw]">
+          <a href={item.path} target="_blank" className="flex flex-col">
+            <div className="flex h-[40vw] items-center justify-center bg-black md:h-[23vw] 3xl:h-[20vw]">
               <Image
                 className="w-[14%] 3xl:w-[10%]"
                 src={item.logo}
@@ -89,13 +85,13 @@ const OurGroupSection = () => (
                 <h3 className="pb-[0.5vh] text-[2.2vw] 3xl:text-[1.5vw]">
                   {item.title}
                 </h3>
-                <a
+                <span
                   className="text-[1.2vw] underline 3xl:text-[0.8vw]"
-                  href={item.path}
-                  target="_blank"
+                  // href={item.path}
+                  // target="_blank"
                 >
                   Open Website
-                </a>
+                </span>
               </div>
               <p className="pe-[30%] text-[1.2vw] font-bold text-secondary 3xl:text-[0.8vw]">
                 {item.des}

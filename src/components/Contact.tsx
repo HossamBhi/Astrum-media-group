@@ -28,13 +28,13 @@ const ContactSection = () => {
             className="absolute bottom-[1.5vw] h-2 bg-black"
           />
         </motion.h3>
-        <motion.a
+        <motion.span
           className="font-RedHatDisplay-Medium text-[2.5vw] text-black"
-          href={`mailto:${OUR_EMAIL}`}
-          aria-label={`Send mail to ${OUR_EMAIL}`}
+          // href={`mailto:${OUR_EMAIL}`}
+          // aria-label={`Send mail to ${OUR_EMAIL}`}
         >
           {OUR_EMAIL}
-        </motion.a>
+        </motion.span>
       </motion.a>
     </SectionWrapper>
   );

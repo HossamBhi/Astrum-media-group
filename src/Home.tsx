@@ -14,7 +14,6 @@ import { HomeNav } from "./components/Navbar";
 const Home = () => (
   <main className="min-h-screen w-full">
     <HomeNav />
-    <HeroSection />
     <AboutSection />
     <FeatureProjectsSection />
     <OurGroupSection />
