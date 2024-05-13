@@ -4,6 +4,7 @@ import { Image } from "../ui";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../utils/motionHelper";
 import { MenuToggle } from "./MenuToggle";
+import { ArrowUp } from "../../assets/svg";
 
 const animateItems = {
   hidden: { opacity: 0 },
@@ -31,16 +32,27 @@ const NavItem = ({
 const HomeNav = () => {
   const [showMenu, setShowMenu] = useState(false);
   const toggleMenu = () => setShowMenu(!showMenu);
-
   const [hash, setHash] = useState(location.hash);
+  const [showGoToTop, setShowGoToTop] = useState(false);
+
   useEffect(() => {
     const onHashChange = () => setHash(location.hash);
+    const handleScroll = () =>
+      setShowGoToTop(window.scrollY > window.innerHeight);
+
     window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
+    window.addEventListener("scroll", handleScroll, false);
+    return () => {
+      window.removeEventListener("hashchange", onHashChange);
+      window.removeEventListener("scroll", handleScroll, false);
+    };
   }, [location]);
 
   return (
-    <nav className="flex items-center justify-between px-[4vw] pt-[2vh] xl:pt-[7vh] 3xl:xl:pt-[4vh]">
+    <nav
+      id="nav"
+      className="flex items-center justify-between px-[4vw] pt-[2vh] xl:pt-[7vh] 3xl:xl:pt-[4vh]"
+    >
       <motion.div
         variants={fadeIn({
           direction: "right",
@@ -119,7 +131,7 @@ const HomeNav = () => {
       <motion.div
         initial={false}
         animate={showMenu ? "open" : "closed"}
-        className="z-[100] relative flex size-[24px] cursor-pointer items-center justify-center md:hidden md:size-[5vw] 2xl:size-[2vw]"
+        className="relative z-[100] flex size-[24px] cursor-pointer items-center justify-center md:hidden md:size-[5vw] 2xl:size-[2vw]"
       >
         <MenuToggle
           showMenu={showMenu}
@@ -129,6 +141,12 @@ const HomeNav = () => {
           }}
         />
       </motion.div>
+      <a
+        href="#nav"
+        className={`fixed bottom-[5vh] right-[5vh] z-50 flex items-center justify-center rounded-full bg-[#f7f7f7] p-2 ${showGoToTop ? "flex" : "hidden"}`}
+      >
+        <ArrowUp />
+      </a>
     </nav>
   );
 };

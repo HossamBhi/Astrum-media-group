@@ -1,7 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { useWindowDimensions } from "../hooks";
-import { NavLinks } from "../utils/helper";
 import { AnimateTextLine, AnimateTextLines } from "./animation";
 import { SectionWrapper } from "./ui";
 
@@ -70,9 +69,7 @@ const FeatureProjectsSection = () => {
         style={width > 768 ? { position, y } : {}}
         className="top-0 w-full bg-white pt-[5vh] md:fixed md:h-screen"
       >
-        <SectionWrapper
-          className="flex flex-row gap-[4vw] pb-[5vh]"
-        >
+        <SectionWrapper className="flex flex-row gap-[4vw] pb-[5vh]">
           <AnimateTextLine className="flex-1 font-RedHatDisplay-Black text-[5vw] 3xl:text-[3.3vw]">
             Feature Projects
           </AnimateTextLine>
