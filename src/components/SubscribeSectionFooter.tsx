@@ -9,7 +9,7 @@ const SubscribeSectionFooter = () => {
     if (isValidEmail(email)) toast.success("Thank you for subscribing");
   };
   return (
-    <div className="w-full px-[5vw] xl:pe-[15vw]">
+    <div className="w-full pe-[5vw] xl:pe-[15vw]">
       <p className="font-RedHatDisplay-Bold text-[1vw] xl:pb-[3vh] 3xl:pb-[5px] 3xl:text-[0.7vw]">
         STAY UP TO DATE
       </p>
@@ -22,7 +22,7 @@ const SubscribeSectionFooter = () => {
           value={email}
           onChange={({ target }) => setEmail(target.value)}
           placeholder="Sign up to our newsletter today"
-          className="w-full border-b-[1px] border-b-black bg-transparent pb-[5px] text-[1.5vw] text-black placeholder-[#8d8a8a90] outline-none placeholder:text-[1.5vw] 2xl:min-h-[80px] 3xl:min-h-[35px] 3xl:text-[1vw] placeholder:3xl:text-[1vw]"
+          className="w-full border-b-[1px] border-b-white bg-transparent pb-[5px] text-[1.5vw] text-black placeholder-[#8d8a8a90] outline-none placeholder:text-[1.5vw] 2xl:min-h-[80px] 3xl:min-h-[35px] 3xl:text-[1vw] placeholder:3xl:text-[1vw]"
         />
       </form>
 

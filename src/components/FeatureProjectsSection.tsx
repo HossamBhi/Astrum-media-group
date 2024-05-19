@@ -73,7 +73,7 @@ const FeatureProjectsSection = () => {
       initial="hidden"
       className="relative md:pb-[6vh] xl:pb-[15vh] 3xl:pb-[10vh]"
     >
-      <motion.div className="w-full bg-white md:pt-[5vh]">
+      <motion.div className="relative w-full bg-white md:pt-[5vh]">
         <SectionWrapper className="flex flex-row gap-[4vw] pb-[5vh]">
           <AnimateTextLine className="flex-1 font-RedHatDisplay-Black text-[5vw] 3xl:text-[3.3vw]">
             Feature Projects
@@ -91,53 +91,56 @@ const FeatureProjectsSection = () => {
             />
           </div>
         </SectionWrapper>
-        <motion.section
-          id="slider"
-          // className="relative flex h-full flex-col gap-[5vw] pe-[4vw] ps-[4vw] md:flex-row md:pe-[30vw]"
-          className="no-scrollbar relative flex h-full gap-[5vw] overflow-x-scroll scroll-smooth whitespace-nowrap ps-[5vw] md:pe-[30vw]"
-        >
-          {data.map((item, index) => (
-            <motion.div
-              key={index}
-              className={`flex flex-col`}
-              style={{ minWidth: cardWidth }}
-            >
-              <div className="flex items-center justify-center overflow-hidden">
-                <motion.img
-                  whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-                  className="w-[100%] object-cover"
-                  src={item.poster}
-                  alt={item.title}
-                />
-              </div>
-              <div
-                className={`flex justify-between ps-[1vw] pt-[2vh] text-[1.5vw] transition-all duration-500 md:text-[1.1vw] xl:pt-[5vh] 3xl:text-[0.73vw] ${activeSlider === index ? "opacity-100" : "opacity-0"}`}
+        <div className="relative">
+          <motion.section
+            id="slider"
+            // className="relative flex h-full flex-col gap-[5vw] pe-[4vw] ps-[4vw] md:flex-row md:pe-[30vw]"
+            // className="no-scrollbar relative flex h-full gap-[5vw] overflow-x-scroll scroll-smooth whitespace-nowrap ps-[5vw] pt-[2vh] md:pe-[30vw] xl:pt-[5vh]"
+            className="no-scrollbar relative flex h-full flex-col gap-[5vw] overflow-x-scroll scroll-smooth whitespace-nowrap pe-[4vw] ps-[4vw] pt-[2vh] md:flex-row md:pe-[30vw] xl:pt-[5vh]"
+          >
+            {data.map((item, index) => (
+              <motion.div
+                key={index}
+                className={`flex flex-col`}
+                style={{ minWidth: cardWidth }}
               >
-                <div className="flex flex-col">
-                  <div className="flex items-center font-RedHatDisplay-Black">
-                    M&nbsp;&nbsp;
-                    <span className="h-[2px] w-[1.2vw] bg-black"></span>
-                    &nbsp; Y
+                <div className="flex items-center justify-center overflow-hidden">
+                  <motion.img
+                    whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                    className="w-[100%] object-cover"
+                    src={item.poster}
+                    alt={item.title}
+                  />
+                </div>
+                <div
+                  className={`flex justify-between ps-[1vw] pt-[2vh] text-[1.5vw] transition-all duration-500 md:text-[1.1vw] xl:pt-[5vh] 3xl:text-[0.73vw]`}
+                >
+                  <div className="flex flex-col">
+                    <div className="flex items-center font-RedHatDisplay-Black">
+                      M&nbsp;&nbsp;
+                      <span className="h-[2px] w-[1.2vw] bg-black"></span>
+                      &nbsp; Y
+                    </div>
+                    <p className="font-bold text-black">{item.date}</p>
                   </div>
-                  <p className="font-bold text-black">{item.date}</p>
+                  <div className="flex flex-col">
+                    <h3 className="min-w-[30vw] font-RedHatDisplay-Black">
+                      CATEGORY
+                    </h3>
+                    <p className="text-[1.6vw] font-medium italic text-secondary md:text-[1.2vw] 3xl:text-[0.8vw]">
+                      {item.category}
+                    </p>
+                  </div>
                 </div>
-                <div className="flex flex-col">
-                  <h3 className="min-w-[30vw] font-RedHatDisplay-Black">
-                    CATEGORY
-                  </h3>
-                  <p className="text-[1.6vw] font-medium italic text-secondary md:text-[1.2vw] 3xl:text-[0.8vw]">
-                    {item.category}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.section>
+              </motion.div>
+            ))}
+          </motion.section>
+          <div className="absolute -top-0 left-0 hidden w-full items-center justify-between gap-[5vw] px-[5vw] md:flex xl:-top-0">
+            <PrevBtn onClick={slideLeft} />
+            <NextBtn onClick={slideRight} />
+          </div>
+        </div>
       </motion.div>
-      <div className="absolute bottom-[1vh] left-[70vw] flex w-[25vw] items-center justify-between gap-[5vw] md:bottom-[6vh] xl:bottom-[15vh] 3xl:bottom-[10vh]">
-        <PrevBtn onClick={slideLeft} />
-        <NextBtn onClick={slideRight} />
-      </div>
     </motion.div>
   );
 };

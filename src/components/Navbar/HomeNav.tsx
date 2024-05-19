@@ -60,7 +60,7 @@ const HomeNav = () => {
         })}
         initial={"hidden"}
         animate={"animate"}
-        className="z-[100] w-[20%] bg-black p-1 xl:w-[15vw] 3xl:w-[10%]"
+        className="z-[100] w-[20%] p-1 xl:w-[15vw] 3xl:w-[10%]"
       >
         <Image src="/Level-A.svg" />
       </motion.div>

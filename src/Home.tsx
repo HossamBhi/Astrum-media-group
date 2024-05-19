@@ -1,9 +1,19 @@
-import App from "./App";
+import { ToastContainer } from "react-toastify";
+import {
+  AboutSection,
+  ContactSection,
+  FeatureProjectsSection,
+  FooterSection,
+  HeroSection,
+  OurGroupSection,
+  OurPeopleSection,
+  RevealedSection,
+} from "./components";
+import { HomeNav } from "./components/Navbar";
 
 const Home = () => (
   <main className="min-h-screen w-full">
-    <App />
-    {/* <HomeNav />
+    <HomeNav />
     <HeroSection />
     <AboutSection />
     <FeatureProjectsSection />
@@ -12,7 +22,7 @@ const Home = () => (
     <RevealedSection />
     <ContactSection />
     <FooterSection />
-    <ToastContainer /> */}
+    <ToastContainer />
   </main>
 );
 
