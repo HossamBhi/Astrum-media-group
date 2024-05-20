@@ -73,6 +73,7 @@ const OurGroupSection = () => (
           title: "Switch",
           des: "Entity comprising specialized boutiques catering to various media.",
           path: "",
+          logo: "/icons/Switch-icon.svg",
         },
       ].map((item, index) => (
         <motion.div
@@ -85,13 +86,11 @@ const OurGroupSection = () => (
           {/* <Tilt options={defaultOptions}> */}
           <a href={item.path} target="_blank" className="flex flex-col">
             <div className="flex h-[40vw] items-center justify-center bg-black md:h-[23vw] 3xl:h-[20vw]">
-              {item.logo && (
-                <Image
-                  className="w-[14%] 3xl:w-[10%]"
-                  src={item.logo}
-                  alt={item.title}
-                />
-              )}
+              <Image
+                className="w-[14%] 3xl:w-[10%]"
+                src={item.logo}
+                alt={item.title}
+              />
             </div>
             <div className="ps-[1vw] pt-[1.5vw] 3xl:pt-[1vw]">
               <div className="flex w-full items-center justify-between font-RedHatDisplay-Black">
