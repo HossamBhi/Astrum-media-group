@@ -9,7 +9,7 @@ const HeroSection = () => {
       className="pt-[1.5vh] xl:pt-[5vh] 3xl:pt-[4vh]"
     >
       <motion.img
-        src="/imgs/hero.png"
+        src="/imgs/MG_landing_thumb.png"
         alt="Hero image"
         className="h-[70vh] w-full object-cover"
       />

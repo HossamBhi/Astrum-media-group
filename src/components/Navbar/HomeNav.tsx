@@ -1,10 +1,9 @@
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { ArrowUp } from "../../assets/svg";
 import { NavLinks } from "../../utils/helper";
 import { Image } from "../ui";
-import { motion } from "framer-motion";
-import { fadeIn } from "../../utils/motionHelper";
 import { MenuToggle } from "./MenuToggle";
-import { ArrowUp } from "../../assets/svg";
 
 const animateItems = {
   hidden: { opacity: 0 },
@@ -54,10 +53,10 @@ const HomeNav = () => {
       className="flex items-center justify-between px-[4vw] pt-[2vh] xl:pt-[7vh] 3xl:xl:pt-[4vh]"
     >
       <motion.div
-        variants={fadeIn({
-          direction: "right",
-          duration: 0.7,
-        })}
+        // variants={fadeIn({
+        //   direction: "right",
+        //   duration: 0.7,
+        // })}
         initial={"hidden"}
         animate={"animate"}
         className="z-[100] w-[20%] p-1 xl:w-[15vw] 3xl:w-[10%]"
@@ -67,13 +66,13 @@ const HomeNav = () => {
       <ul className="hidden gap-[2vw] md:flex">
         {NavLinks.map((item, index) => (
           <motion.li
-            variants={fadeIn({
-              direction: "down",
-              duration: 0.7,
-              delay: index * 0.1,
-            })}
-            initial={"hidden"}
-            animate={"animate"}
+            // variants={fadeIn({
+            //   direction: "down",
+            //   duration: 0.7,
+            //   delay: index * 0.1,
+            // })}
+            // initial={"hidden"}
+            // animate={"animate"}
             key={item.path}
             className={`${
               hash === "" && index === 0

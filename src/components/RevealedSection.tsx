@@ -9,7 +9,7 @@ const data = [
     title: "Astrum Films",
     des: "Entity comprising specialized boutiques catering to various media.",
     url: "",
-    poster: "/imgs/revelated1.png",
+    poster: "/imgs/MG_Content.png",
     category: "ORIGINAL DOCUMENTARY",
     date: "APRIL 2024",
   },
