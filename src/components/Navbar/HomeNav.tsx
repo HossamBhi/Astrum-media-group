@@ -61,7 +61,7 @@ const HomeNav = () => {
         animate={"animate"}
         className="z-[100] w-[20%] p-1 xl:w-[15vw] 3xl:w-[10%]"
       >
-        <Image src="/Level-A.svg" />
+        <Image src="/Astrum_MG.svg" />
       </motion.div>
       <ul className="hidden gap-[2vw] md:flex">
         {NavLinks.map((item, index) => (
