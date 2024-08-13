@@ -63,6 +63,7 @@ const HomeNav = () => {
       >
         <Image src="/Astrum_MG.svg" />
       </motion.div>
+      
       <ul className="hidden gap-[2vw] md:flex">
         {NavLinks.map((item, index) => (
           <motion.li
